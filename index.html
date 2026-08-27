@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WOOD IN THE PUMPUM — $PUMPUM</title>
+<meta name="description" content="Straight outta yard wid pure tease — $PUMPUM carry di sound an di sweetness of Jamaica. Big wood. Big energy. Big pum pum.">
+<link rel="icon" type="image/png" href="assets/pumpum-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Shade&family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --nite:#0d0b06;        /* soundsystem black */
+    --wood:#5a3218;        /* mahogany plank */
+    --wood-lite:#8a5a2b;
+    --gold:#ffc93c;        /* coin gold */
+    --gold-deep:#f5a623;
+    --green:#009b3a;       /* yard green */
+    --green-deep:#00692a;
+    --peach:#ff9a5c;
+    --sunset:#ff7043;
+    --neon:#ff3355;        /* pum pum neon */
+    --sand:#ffe8b8;
+    --sand-lite:#fff3d6;
+    --ink:#2b1a0a;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Baloo 2',system-ui,sans-serif;
+    background:var(--nite);
+    color:var(--ink);
+    overflow-x:hidden;
+    font-size:1.06rem;
+    line-height:1.55;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit}
+
+  /* ============ type helpers ============ */
+  .display{
+    font-family:'Bungee',cursive;
+    text-transform:uppercase;
+    line-height:1.05;
+    letter-spacing:.01em;
+  }
+  .gold-3d{
+    color:var(--gold);
+    text-shadow:
+      0 1px 0 #c47f14, 0 2px 0 #b26f0f, 0 3px 0 #9a5e0a,
+      0 4px 0 #7d4a06, 0 5px 0 #5e3603, 0 6px 12px rgba(0,0,0,.55);
+  }
+  .eyebrow{
+    font-family:'Bungee',cursive;
+    font-size:.8rem;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+  }
+
+  /* ============ flag stripe divider ============ */
+  .stripes{
+    height:22px;
+    background:repeating-linear-gradient(
+      -45deg,
+      var(--green) 0 26px,
+      var(--gold) 26px 40px,
+      #111 40px 66px,
+      var(--gold) 66px 80px
+    );
+    border-top:3px solid rgba(0,0,0,.35);
+    border-bottom:3px solid rgba(0,0,0,.35);
+  }
+
+  /* ============ ticker ============ */
+  .ticker{
+    background:var(--green-deep);
+    border-bottom:3px solid var(--gold);
+    overflow:hidden;
+    white-space:nowrap;
+    position:relative;
+  }
+  .ticker-track{
+    display:inline-block;
+    padding:.55rem 0;
+    animation:ticker 28s linear infinite;
+  }
+  .ticker-track span{
+    font-family:'Bungee',cursive;
+    font-size:.82rem;
+    letter-spacing:.14em;
+    color:var(--sand-lite);
+    padding:0 1.1rem;
+  }
+  .ticker-track span b{color:var(--gold);font-weight:400}
+  @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ============ hero ============ */
+  .hero{
+    position:relative;
+    background:
+      radial-gradient(ellipse 120% 70% at 50% 108%, rgba(255,112,67,.55), transparent 60%),
+      radial-gradient(ellipse 80% 55% at 50% 115%, rgba(255,201,60,.5), transparent 55%),
+      linear-gradient(180deg,#120e07 0%, #241305 42%, #6b2d10 78%, #a3480f 100%);
+    text-align:center;
+    padding:4.2rem 1.25rem 0;
+    color:var(--sand-lite);
+  }
+  .hero-inner{max-width:960px;margin:0 auto;position:relative;z-index:2}
+
+  .hero .eyebrow{
+    color:var(--gold);
+    display:inline-block;
+    border:2px solid var(--gold);
+    border-radius:999px;
+    padding:.5rem 1.2rem;
+    background:rgba(0,0,0,.35);
+  }
+
+  /* spinning coin */
+  .coin-stage{perspective:900px;width:min(280px,58vw);margin:2.2rem auto 1.6rem}
+  .coin{
+    width:100%;
+    animation:spin 6s linear infinite;
+    transform-style:preserve-3d;
+    filter:drop-shadow(0 22px 30px rgba(0,0,0,.55)) drop-shadow(0 0 42px rgba(255,201,60,.4));
+  }
+  @keyframes spin{
+    0%{transform:rotateY(0deg)}
+    100%{transform:rotateY(360deg)}
+  }
+
+  .hero h1{
+    font-family:'Bungee Shade',cursive;
+    font-size:clamp(2.3rem,7.2vw,5.4rem);
+    line-height:1;
+    color:var(--gold);
+    text-shadow:0 4px 0 rgba(0,0,0,.35);
+    margin:.4rem 0 1rem;
+  }
+  .tagline{
+    font-family:'Bungee',cursive;
+    font-size:clamp(.95rem,2.4vw,1.5rem);
+    letter-spacing:.04em;
+  }
+  .tagline .t1{color:#fff}
+  .tagline .t2{color:#7dff9e}
+  .tagline .t3{color:#ff8fa3}
+  .hero-sub{
+    max-width:560px;
+    margin:1.1rem auto 0;
+    font-size:1.12rem;
+    font-weight:600;
+    color:#ffe0b5;
+  }
+
+  /* CA pill */
+  .ca-wrap{margin:2rem auto 0;max-width:640px}
+  .ca-label{
+    font-family:'Bungee',cursive;
+    font-size:.72rem;
+    letter-spacing:.2em;
+    color:var(--gold);
+    margin-bottom:.5rem;
+  }
+  .ca-pill{
+    display:flex;
+    align-items:center;
+    gap:.6rem;
+    width:100%;
+    background:rgba(0,0,0,.5);
+    border:2px dashed var(--gold);
+    border-radius:14px;
+    color:var(--sand-lite);
+    font-family:ui-monospace,Menlo,monospace;
+    font-size:.82rem;
+    padding:.85rem 1rem;
+    cursor:pointer;
+    transition:transform .12s ease, background .2s;
+    word-break:break-all;
+    text-align:left;
+  }
+  .ca-pill:hover{background:rgba(0,0,0,.72);transform:scale(1.015)}
+  .ca-pill:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+  .ca-pill .copy-ic{flex:none;font-size:1.1rem}
+  .ca-toast{
+    font-family:'Bungee',cursive;
+    font-size:.72rem;
+    letter-spacing:.12em;
+    color:#7dff9e;
+    margin-top:.5rem;
+    min-height:1.2em;
+    opacity:0;
+    transition:opacity .25s;
+  }
+  .ca-toast.show{opacity:1}
+
+  /* CTAs */
+  .cta-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:1rem;
+    justify-content:center;
+    margin:1.8rem auto 0;
+  }
+  .btn{
+    font-family:'Bungee',cursive;
+    font-size:.95rem;
+    letter-spacing:.05em;
+    text-decoration:none;
+    padding:1rem 1.7rem;
+    border-radius:14px;
+    border:3px solid rgba(0,0,0,.4);
+    box-shadow:0 6px 0 rgba(0,0,0,.4);
+    transition:transform .12s ease, box-shadow .12s ease;
+    display:inline-block;
+  }
+  .btn:hover{transform:translateY(-3px);box-shadow:0 9px 0 rgba(0,0,0,.4)}
+  .btn:active{transform:translateY(2px);box-shadow:0 3px 0 rgba(0,0,0,.4)}
+  .btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
+  .btn-gold{background:linear-gradient(180deg,var(--gold),var(--gold-deep));color:#3a2404}
+  .btn-green{background:linear-gradient(180deg,#00c04a,var(--green-deep));color:#eafff0}
+
+  /* banner strip */
+  .hero-banner{
+    margin-top:3.2rem;
+    position:relative;
+  }
+  .hero-banner img{
+    width:100%;
+    border-top:5px solid var(--gold);
+  }
+
+  /* ============ sections ============ */
+  section{padding:4.5rem 1.25rem}
+  .wrap{max-width:1020px;margin:0 auto}
+  .sec-head{text-align:center;margin-bottom:2.6rem}
+  .sec-head .eyebrow{color:var(--green-deep)}
+  .sec-head h2{
+    font-family:'Bungee',cursive;
+    font-size:clamp(1.7rem,4.5vw,2.8rem);
+    margin-top:.4rem;
+  }
+  .sec-head p{max-width:560px;margin:.7rem auto 0;font-weight:600}
+
+  /* ---- bout section ---- */
+  .bout{background:
+    radial-gradient(circle at 12% 18%, rgba(255,154,92,.35), transparent 34%),
+    radial-gradient(circle at 88% 82%, rgba(0,155,58,.18), transparent 34%),
+    var(--sand);
+  }
+  .bout .sec-head h2{color:var(--wood)}
+  .bout-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:1.4rem;
+    margin-top:2.4rem;
+  }
+  .sign{
+    background:
+      repeating-linear-gradient(180deg, rgba(0,0,0,.06) 0 3px, transparent 3px 14px),
+      linear-gradient(180deg,var(--wood-lite),var(--wood));
+    border:4px solid #3c2008;
+    border-radius:10px;
+    color:var(--sand-lite);
+    padding:1.6rem 1.4rem 1.8rem;
+    box-shadow:0 10px 0 #2a1605, 0 16px 24px rgba(0,0,0,.25);
+    position:relative;
+    text-align:center;
+  }
+  .sign::before,.sign::after{
+    content:"";
+    position:absolute;
+    top:10px;
+    width:10px;height:10px;
+    border-radius:50%;
+    background:radial-gradient(circle at 35% 30%,#ddd,#666 70%);
+    box-shadow:inset 0 -1px 2px rgba(0,0,0,.6);
+  }
+  .sign::before{left:12px}
+  .sign::after{right:12px}
+  .sign h3{
+    font-family:'Bungee',cursive;
+    font-size:1.05rem;
+    margin-bottom:.6rem;
+  }
+  .sign .emo{font-size:2rem;display:block;margin-bottom:.5rem}
+  .sign p{font-size:.98rem;color:#ffe9c9}
+  .sign.s1 h3{color:#7dff9e}
+  .sign.s2 h3{color:var(--gold)}
+  .sign.s3 h3{color:#ff8fa3}
+  .bout-copy{
+    max-width:680px;
+    margin:0 auto;
+    font-size:1.18rem;
+    font-weight:600;
+    text-align:center;
+    color:var(--ink);
+  }
+  .bout-copy b{color:var(--green-deep)}
+
+  /* ---- riddim console (signature) ---- */
+  .riddim{
+    background:
+      radial-gradient(ellipse 90% 60% at 50% -10%, rgba(255,51,85,.14), transparent 60%),
+      var(--nite);
+    color:var(--sand-lite);
+  }
+  .riddim .sec-head .eyebrow{color:var(--neon)}
+  .riddim .sec-head h2{color:var(--gold)}
+  .riddim .sec-head p{color:#d8c9a8}
+
+  .console{
+    background:
+      repeating-linear-gradient(90deg, rgba(0,0,0,.14) 0 4px, transparent 4px 26px),
+      linear-gradient(180deg,#6d3d19,#4a2810);
+    border:5px solid #2a1605;
+    border-radius:18px;
+    box-shadow:0 14px 0 #1a0d03, 0 26px 44px rgba(0,0,0,.6), inset 0 2px 0 rgba(255,255,255,.12);
+    padding:2.2rem 1.6rem 2.6rem;
+    max-width:860px;
+    margin:0 auto;
+  }
+  .console-brand{
+    text-align:center;
+    font-family:'Bungee',cursive;
+    font-size:.72rem;
+    letter-spacing:.3em;
+    color:var(--gold);
+    margin-bottom:1.8rem;
+  }
+  .faders{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1.2rem;
+  }
+  .fader{
+    background:rgba(0,0,0,.42);
+    border:2px solid rgba(255,201,60,.25);
+    border-radius:12px;
+    padding:1.3rem 1rem 1.5rem;
+    text-align:center;
+  }
+  .fader .pct{
+    font-family:'Bungee',cursive;
+    font-size:clamp(1.5rem,4vw,2.3rem);
+  }
+  .fader .fname{
+    font-family:'Bungee',cursive;
+    font-size:.78rem;
+    letter-spacing:.16em;
+    margin-top:.2rem;
+    color:#d8c9a8;
+  }
+  .fader .note{font-size:.85rem;color:#b7a683;margin-top:.55rem;line-height:1.35}
+  .slot{
+    position:relative;
+    width:8px;
+    height:130px;
+    margin:1.1rem auto .2rem;
+    background:#181008;
+    border-radius:4px;
+    box-shadow:inset 0 2px 6px rgba(0,0,0,.9);
+  }
+  .knob{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    width:44px;height:22px;
+    border-radius:6px;
+    border:2px solid rgba(0,0,0,.5);
+    box-shadow:0 4px 8px rgba(0,0,0,.55), inset 0 2px 0 rgba(255,255,255,.35);
+  }
+  .fader.vibes .pct{color:#7dff9e}
+  .fader.vibes .knob{top:-8px;background:linear-gradient(180deg,#37e572,#00913a)}
+  .fader.wine .pct{color:var(--gold)}
+  .fader.wine .knob{top:-8px;background:linear-gradient(180deg,var(--gold),#c47f14)}
+  .fader.shame .pct{color:var(--neon)}
+  .fader.shame .knob{bottom:-8px;background:linear-gradient(180deg,#ff6b87,#b31231)}
+
+  /* EQ bars */
+  .eq{
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+    gap:6px;
+    height:64px;
+    margin-top:2.2rem;
+  }
+  .eq i{
+    width:12px;
+    border-radius:3px 3px 0 0;
+    background:linear-gradient(180deg,var(--gold),var(--sunset));
+    animation:eq 1s ease-in-out infinite alternate;
+    transform-origin:bottom;
+  }
+  .eq i:nth-child(3n){background:linear-gradient(180deg,#37e572,var(--green-deep))}
+  .eq i:nth-child(4n){background:linear-gradient(180deg,#ff6b87,#b31231)}
+  @keyframes eq{from{height:12%}to{height:100%}}
+
+  .supply-line{
+    text-align:center;
+    margin-top:2rem;
+    font-weight:600;
+    color:#d8c9a8;
+  }
+  .supply-line b{color:var(--gold)}
+
+  /* ---- how fi buy ---- */
+  .buy{background:
+    radial-gradient(circle at 85% 10%, rgba(255,201,60,.3), transparent 38%),
+    linear-gradient(180deg,#0a7a34,var(--green-deep));
+    color:var(--sand-lite);
+  }
+  .buy .sec-head .eyebrow{color:var(--gold)}
+  .buy .sec-head h2{color:#fff}
+  .buy .sec-head p{color:#d4ffe2}
+  .steps{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:1.3rem;
+  }
+  .step{
+    background:rgba(0,0,0,.32);
+    border:2px solid rgba(255,201,60,.4);
+    border-radius:16px;
+    padding:1.6rem 1.3rem;
+    position:relative;
+  }
+  .step .num{
+    font-family:'Bungee',cursive;
+    font-size:1rem;
+    color:#12310b;
+    background:var(--gold);
+    width:42px;height:42px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 4px 0 rgba(0,0,0,.35);
+    margin-bottom:.9rem;
+  }
+  .step h3{
+    font-family:'Bungee',cursive;
+    font-size:.95rem;
+    color:var(--gold);
+    margin-bottom:.5rem;
+  }
+  .step p{font-size:.96rem;color:#e3ffed}
+  .buy-cta{text-align:center;margin-top:2.4rem}
+
+  /* ---- riddim-map ---- */
+  .rmap{background:
+    radial-gradient(ellipse 100% 60% at 50% 115%, rgba(255,112,67,.5), transparent 60%),
+    linear-gradient(180deg,#2a1204,#571f07);
+    color:var(--sand-lite);
+  }
+  .rmap .sec-head .eyebrow{color:var(--peach)}
+  .rmap .sec-head h2{color:var(--gold)}
+  .rmap .sec-head p{color:#ecd2b0}
+  .phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.4rem}
+  .phase{
+    background:rgba(0,0,0,.38);
+    border:2px solid rgba(255,154,92,.4);
+    border-radius:16px;
+    padding:1.7rem 1.4rem;
+  }
+  .phase .ph-tag{
+    font-family:'Bungee',cursive;
+    font-size:.7rem;
+    letter-spacing:.2em;
+    color:var(--peach);
+  }
+  .phase h3{
+    font-family:'Bungee',cursive;
+    font-size:1.15rem;
+    color:var(--gold);
+    margin:.5rem 0 .6rem;
+  }
+  .phase p{font-size:.97rem;color:#f2ddc2}
+  .phase .done{
+    display:inline-block;
+    margin-top:.8rem;
+    font-family:'Bungee',cursive;
+    font-size:.65rem;
+    letter-spacing:.14em;
+    color:#7dff9e;
+    border:2px solid #7dff9e;
+    border-radius:999px;
+    padding:.3rem .7rem;
+  }
+
+  /* ---- footer ---- */
+  footer{
+    background:var(--nite);
+    color:#b7a683;
+    text-align:center;
+    padding:4rem 1.25rem 3rem;
+  }
+  .neon{
+    font-family:'Bungee',cursive;
+    font-size:clamp(2rem,6vw,3.4rem);
+    color:#ffd7de;
+    text-shadow:
+      0 0 6px #ff3355, 0 0 18px #ff3355,
+      0 0 42px #ff3355, 0 0 80px rgba(255,51,85,.7);
+    animation:flick 3.4s infinite;
+    display:inline-block;
+    margin-bottom:.6rem;
+  }
+  @keyframes flick{
+    0%,18%,22%,54%,58%,100%{opacity:1}
+    20%,56%{opacity:.45}
+    57%{opacity:.75}
+  }
+  .neon-sub{
+    font-family:'Bungee',cursive;
+    font-size:.8rem;
+    letter-spacing:.24em;
+    color:var(--gold);
+    margin-bottom:2rem;
+  }
+  .foot-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:1.6rem;
+    justify-content:center;
+    margin-bottom:2rem;
+  }
+  .foot-links a{
+    font-family:'Bungee',cursive;
+    font-size:.8rem;
+    letter-spacing:.1em;
+    color:var(--sand-lite);
+    text-decoration:none;
+    border-bottom:2px solid var(--gold);
+    padding-bottom:.2rem;
+  }
+  .foot-links a:hover{color:var(--gold)}
+  .disclaimer{
+    max-width:620px;
+    margin:0 auto 1.6rem;
+    font-size:.9rem;
+  }
+  .fine{font-size:.8rem;color:#6e6148}
+
+  /* reduced motion */
+  @media (prefers-reduced-motion:reduce){
+    .coin,.ticker-track,.eq i,.neon{animation:none}
+    html{scroll-behavior:auto}
+  }
+  @media (max-width:640px){
+    .faders{grid-template-columns:1fr}
+    .slot{height:90px}
+    section{padding:3.4rem 1.1rem}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= TICKER ================= -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track" id="tickerTrack">
+    <span>★ DI WOOD KNOW WEH DI PUM PUM DEH</span><span><b>100% VIBES</b></span><span>★ 100% WINE</span><span><b>0% SHAME</b></span><span>★ MOON NICE 🌙</span><span><b>TURN UP DI BASS 🔊</b></span><span>★ BIG PEOPLE BUSINESS</span><span><b>STRAIGHT OUTTA YARD 🇯🇲</b></span>
+  </div>
+</div>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">Straight Outta Yard 🇯🇲 · Pon Solana</span>
+
+    <div class="coin-stage">
+      <img class="coin" src="assets/pumpum-icon.png" alt="Di $PUMPUM gold coin — one happy piece a wood tuck up between two juicy peach">
+    </div>
+
+    <h1>Wood In The Pumpum</h1>
+    <p class="tagline display">
+      <span class="t1">Big Wood.</span>
+      <span class="t2">Big Energy.</span>
+      <span class="t3">Big Pum Pum.</span>
+    </p>
+    <p class="hero-sub">Reggae fi di romance, trap fi di rudeness — an di wood <em>always</em> know weh di pum pum deh. 😏</p>
+
+    <div class="ca-wrap">
+      <div class="ca-label">Di Contract Address — Press Fi Copy</div>
+      <button class="ca-pill" id="caBtn" type="button" aria-label="Copy di contract address">
+        <span class="copy-ic">📋</span>
+        <span>77hYuGaddPrvxG872SqTd8d8oBgoXaMABAvRh9f7pump</span>
+      </button>
+      <div class="ca-toast" id="caToast" role="status">COPY DAT! ✔ YUH GOOD, ZEEN.</div>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn btn-gold" href="https://pump.fun/coin/77hYuGaddPrvxG872SqTd8d8oBgoXaMABAvRh9f7pump" target="_blank" rel="noopener">🚀 Buy Pon Pump.fun</a>
+      <a class="btn btn-green" href="https://www.instagram.com/woodinthepumpum/" target="_blank" rel="noopener">📸 Follow Di Vibes Pon IG</a>
+    </div>
+  </div>
+
+  <div class="hero-banner">
+    <img src="assets/pumpum-banner.png" alt="Di $PUMPUM banner — rasta dog pon a Jamaica beach wid di gold coin, palm tree an neon Pum Pum shack">
+  </div>
+</header>
+
+<div class="stripes" aria-hidden="true"></div>
+
+<!-- ================= BOUT ================= -->
+<section class="bout" id="bout">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">A Weh Dis? 🤔</span>
+      <h2 class="gold-3d">Wi Culture. Wi Riddim.<br>Wi Big-People Business.</h2>
+    </div>
+
+    <p class="bout-copy">
+      $PUMPUM run pon <b>two frequency</b> weh fit perfect — di <b>Wood</b> an di <b>Pum Pum</b>,
+      lock in tight pon di riddim like bass pon a sound system. Reggae set di mood, trap bring
+      di pace, an nature tek care a di rest. Wi nuh pretend — <b>yuh know weh di name mean.</b> 😏🇯🇲🔊
+    </p>
+
+    <div class="bout-grid">
+      <div class="sign s1">
+        <span class="emo">🌴</span>
+        <h3>Jamaican Roots</h3>
+        <p>Born a yard, raise pon riddim. Every likkle piece a dis coin soak inna di culture.</p>
+      </div>
+      <div class="sign s2">
+        <span class="emo">🍑</span>
+        <h3>Tropical Vibes</h3>
+        <p>Sunset, sea breeze, an two juicy peach. Tings weh slot in nice pon di beat — moon nice.</p>
+      </div>
+      <div class="sign s3">
+        <span class="emo">🪵</span>
+        <h3>Pum Pum Power</h3>
+        <p>When di riddim drop, a pon di dancefloor di wood meet di pum pum. Every. Single. Time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stripes" aria-hidden="true"></div>
+
+<!-- ================= RIDDIM CONSOLE ================= -->
+<section class="riddim" id="tokenomics">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Di Tokenomics Dem 🎛️</span>
+      <h2>Check Di Faders Pon Di Console</h2>
+      <p>Two frequency, one riddim. Wi set di levels an wi nah move dem.</p>
+    </div>
+
+    <div class="console">
+      <div class="console-brand">★ PUMPUM SOUND SYSTEM — YARD EDITION ★</div>
+      <div class="faders">
+        <div class="fader vibes">
+          <div class="pct">100%</div>
+          <div class="fname">Vibes</div>
+          <div class="slot"><div class="knob"></div></div>
+          <p class="note">Fader push up to di top an di top a beg fi mercy.</p>
+        </div>
+        <div class="fader wine">
+          <div class="pct">100%</div>
+          <div class="fname">Wine</div>
+          <div class="slot"><div class="knob"></div></div>
+          <p class="note">A likkle wine inna di dark corner. Mandatory dat.</p>
+        </div>
+        <div class="fader shame">
+          <div class="pct">0%</div>
+          <div class="fname">Shame</div>
+          <div class="slot"><div class="knob"></div></div>
+          <p class="note">Zero. None. Wi search di whole yard — wi nuh have none.</p>
+        </div>
+      </div>
+
+      <div class="eq" aria-hidden="true">
+        <i style="animation-delay:0s"></i><i style="animation-delay:.15s"></i><i style="animation-delay:.32s"></i><i style="animation-delay:.08s"></i><i style="animation-delay:.44s"></i><i style="animation-delay:.2s"></i><i style="animation-delay:.5s"></i><i style="animation-delay:.12s"></i><i style="animation-delay:.36s"></i><i style="animation-delay:.04s"></i><i style="animation-delay:.28s"></i><i style="animation-delay:.48s"></i><i style="animation-delay:.16s"></i><i style="animation-delay:.4s"></i>
+      </div>
+    </div>
+
+    <p class="supply-line"><b>1 BILLION $PUMPUM</b> pon di supply — nuff fi everybody get a piece a di pum pum. Launch pon pump.fun, bond an graduate aready, zeen. 🎓</p>
+  </div>
+</section>
+
+<div class="stripes" aria-hidden="true"></div>
+
+<!-- ================= HOW FI BUY ================= -->
+<section class="buy" id="buy">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">No Long Talk 🗣️</span>
+      <h2>How Fi Get Di Wood Inna Yuh Wallet</h2>
+      <p>Four likkle step. Even yuh granny can do dis (but nuh show har di coin name).</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Get Yuh Wallet</h3>
+        <p>Download Phantom or any Solana wallet. Dat a yuh yard fi di coin dem live inna.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Load Up Some SOL</h3>
+        <p>Buy likkle SOL pon a exchange an send it go a yuh wallet. Nuh badda send yuh rent money.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Forward Pon Pump.fun</h3>
+        <p>Press di big gold button, connect yuh wallet, an paste di contract if yuh waan double-check.</p>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <h3>Slap Di Buy Button</h3>
+        <p>Swap yuh SOL fi $PUMPUM an hold it tight tight. Welcome to di dance. 🔊</p>
+      </div>
+    </div>
+
+    <div class="buy-cta">
+      <a class="btn btn-gold" href="https://pump.fun/coin/77hYuGaddPrvxG872SqTd8d8oBgoXaMABAvRh9f7pump" target="_blank" rel="noopener">🍑 Tek Mi To Di Pum Pum</a>
+    </div>
+  </div>
+</section>
+
+<div class="stripes" aria-hidden="true"></div>
+
+<!-- ================= RIDDIM-MAP ================= -->
+<section class="rmap" id="riddimmap">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Nuh Roadmap — Riddim-Map 🗺️</span>
+      <h2>Weh Wi A Go From Yah So</h2>
+      <p>Three phase, one destination. Turn down di light an follow di bass.</p>
+    </div>
+
+    <div class="phases">
+      <div class="phase">
+        <span class="ph-tag">Phase 1</span>
+        <h3>Di Wood Rise 🪵</h3>
+        <p>Launch pon pump.fun. Di community link up, di meme dem start fly, an everybody feel di vibes.</p>
+        <span class="done">✔ Done Dat</span>
+      </div>
+      <div class="phase">
+        <span class="ph-tag">Phase 2</span>
+        <h3>Di Riddim Drop 🔊</h3>
+        <p>Coin bond an graduate off di curve. Sound system get louder, di wine get wickeder, di corner get darker.</p>
+        <span class="done">✔ Done Dat To</span>
+      </div>
+      <div class="phase">
+        <span class="ph-tag">Phase 3</span>
+        <h3>Moon Nice 🌙</h3>
+        <p>Turn down di light, turn up di bass, an come een. Di wood meet di pum pum pon di moon — an di moon nah complain.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stripes" aria-hidden="true"></div>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="neon">PUM&nbsp;PUM</div>
+  <div class="neon-sub">Open All Night · Bass Included</div>
+
+  <div class="foot-links">
+    <a href="https://pump.fun/coin/77hYuGaddPrvxG872SqTd8d8oBgoXaMABAvRh9f7pump" target="_blank" rel="noopener">Pump.fun</a>
+    <a href="https://www.instagram.com/woodinthepumpum/" target="_blank" rel="noopener">Instagram</a>
+    <a href="#bout">Bout Di Coin</a>
+    <a href="#tokenomics">Tokenomics</a>
+  </div>
+
+  <p class="disclaimer">
+    Hear dis good: <b>$PUMPUM a fi laugh an vibes only</b> — dis nuh financial advice at all at all.
+    Meme coin nuh have no intrinsic value, zeen? Di price can wine up an it can wine dung.
+    Only put in weh yuh can afford fi lose, an big up yuhself an trade responsible.
+  </p>
+
+  <p class="fine">© 2026 WOOD IN THE PUMPUM · All Riddim Reserved · Mek Wid Nuff Love A Yard 🇯🇲</p>
+</footer>
+
+<script>
+  // duplicate ticker content so di loop seamless
+  var track = document.getElementById('tickerTrack');
+  track.innerHTML += track.innerHTML;
+
+  // copy di CA
+  var caBtn = document.getElementById('caBtn');
+  var caToast = document.getElementById('caToast');
+  var CA = '77hYuGaddPrvxG872SqTd8d8oBgoXaMABAvRh9f7pump';
+  caBtn.addEventListener('click', function(){
+    navigator.clipboard.writeText(CA).then(function(){
+      caToast.textContent = 'COPY DAT! ✔ YUH GOOD, ZEEN.';
+      caToast.classList.add('show');
+      setTimeout(function(){ caToast.classList.remove('show'); }, 2200);
+    }).catch(function(){
+      caToast.textContent = 'CYAAN COPY — HIGHLIGHT IT YUHSELF, BOSS.';
+      caToast.classList.add('show');
+    });
+  });
+</script>
+</body>
+</html>
