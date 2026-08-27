@@ -5,7 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WOOD IN THE PUMPUM — $PUMPUM</title>
 <meta name="description" content="Straight outta yard wid pure tease — $PUMPUM carry di sound an di sweetness of Jamaica. Big wood. Big energy. Big pum pum.">
+<meta name="theme-color" content="#0d0b06">
+<meta property="og:title" content="WOOD IN THE PUMPUM — $PUMPUM">
+<meta property="og:description" content="Reggae fi di romance, trap fi di rudeness. Big wood. Big energy. Big pum pum.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jaredb650.github.io/pumpum/">
+<meta property="og:image" content="https://jaredb650.github.io/pumpum/assets/pumpum-banner.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="assets/pumpum-icon.png">
+<link rel="preload" as="image" href="assets/hero-soundsystem-bg.jpg" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Shade&family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -100,12 +108,20 @@
   .hero{
     position:relative;
     background:
-      radial-gradient(ellipse 120% 70% at 50% 108%, rgba(255,112,67,.55), transparent 60%),
-      radial-gradient(ellipse 80% 55% at 50% 115%, rgba(255,201,60,.5), transparent 55%),
-      linear-gradient(180deg,#120e07 0%, #241305 42%, #6b2d10 78%, #a3480f 100%);
+      linear-gradient(180deg,rgba(7,9,13,.42) 0%,rgba(13,11,6,.68) 48%,rgba(46,19,4,.38) 82%,rgba(13,11,6,.12) 100%),
+      url('assets/hero-soundsystem-bg.jpg') center top / cover no-repeat;
     text-align:center;
     padding:4.2rem 1.25rem 0;
     color:var(--sand-lite);
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    inset:0 0 auto;
+    height:70%;
+    pointer-events:none;
+    background:radial-gradient(ellipse 46% 58% at 50% 34%,rgba(8,8,8,.34),transparent 76%);
   }
   .hero-inner{max-width:960px;margin:0 auto;position:relative;z-index:2}
 
@@ -226,6 +242,7 @@
   .hero-banner{
     margin-top:3.2rem;
     position:relative;
+    z-index:2;
   }
   .hero-banner img{
     width:100%;
@@ -303,9 +320,10 @@
   /* ---- riddim console (signature) ---- */
   .riddim{
     background:
-      radial-gradient(ellipse 90% 60% at 50% -10%, rgba(255,51,85,.14), transparent 60%),
-      var(--nite);
+      linear-gradient(180deg,rgba(13,11,6,.9),rgba(13,11,6,.72) 46%,rgba(13,11,6,.94)),
+      url('assets/console-wood-bg.jpg') center / cover no-repeat;
     color:var(--sand-lite);
+    position:relative;
   }
   .riddim .sec-head .eyebrow{color:var(--neon)}
   .riddim .sec-head h2{color:var(--gold)}
@@ -314,7 +332,7 @@
   .console{
     background:
       repeating-linear-gradient(90deg, rgba(0,0,0,.14) 0 4px, transparent 4px 26px),
-      linear-gradient(180deg,#6d3d19,#4a2810);
+      linear-gradient(180deg,rgba(109,61,25,.94),rgba(50,25,8,.95));
     border:5px solid #2a1605;
     border-radius:18px;
     box-shadow:0 14px 0 #1a0d03, 0 26px 44px rgba(0,0,0,.6), inset 0 2px 0 rgba(255,255,255,.12);
@@ -450,8 +468,8 @@
 
   /* ---- riddim-map ---- */
   .rmap{background:
-    radial-gradient(ellipse 100% 60% at 50% 115%, rgba(255,112,67,.5), transparent 60%),
-    linear-gradient(180deg,#2a1204,#571f07);
+    linear-gradient(180deg,rgba(14,11,13,.74),rgba(24,10,4,.62) 58%,rgba(13,9,5,.84)),
+    url('assets/moonlit-riddim-bg.jpg') center / cover no-repeat;
     color:var(--sand-lite);
   }
   .rmap .sec-head .eyebrow{color:var(--peach)}
@@ -459,10 +477,12 @@
   .rmap .sec-head p{color:#ecd2b0}
   .phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.4rem}
   .phase{
-    background:rgba(0,0,0,.38);
+    background:rgba(10,7,5,.68);
     border:2px solid rgba(255,154,92,.4);
     border-radius:16px;
     padding:1.7rem 1.4rem;
+    box-shadow:0 16px 32px rgba(0,0,0,.28);
+    backdrop-filter:blur(5px);
   }
   .phase .ph-tag{
     font-family:'Bungee',cursive;
@@ -552,6 +572,9 @@
     .faders{grid-template-columns:1fr}
     .slot{height:90px}
     section{padding:3.4rem 1.1rem}
+    .hero{background-position:center top}
+    .riddim{background-position:center}
+    .rmap{background-position:58% center}
   }
 </style>
 </head>
